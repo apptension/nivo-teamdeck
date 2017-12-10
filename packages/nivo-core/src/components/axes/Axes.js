@@ -19,10 +19,14 @@ const positions = [...horizontalPositions, ...verticalPositions]
 
 const Axes = ({
     // generic
+    enableTemplates,
     xScale,
     yScale,
     width,
     height,
+
+    axisFormat,
+    format,
 
     // axes
     top,
@@ -47,6 +51,8 @@ const Axes = ({
 
                 if (!axis) return null
 
+                if (enableTemplates && position === 'bottom') return null
+
                 const scale = horizontalPositions.includes(position) ? xScale : yScale
 
                 return (
@@ -57,6 +63,8 @@ const Axes = ({
                         width={width}
                         height={height}
                         position={position}
+                        axisFormat={axisFormat}
+                        format={format}
                         scale={scale}
                         animate={animate}
                         motionDamping={motionDamping}

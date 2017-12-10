@@ -13,9 +13,11 @@ import { generateGroupedBars, generateStackedBars } from './compute'
 import setDisplayName from 'recompose/setDisplayName'
 import enhance from './enhance'
 import { BarPropTypes } from './props'
+import BarSlices from './BarSlices'
 import { Container, SvgWrapper } from '@nivo/core'
 import { Grid, Axes } from '@nivo/core'
-import { CartesianMarkers } from '@nivo/core'
+import { CartesianMarkers, computeAxisTicks } from '@nivo/core'
+import { map, groupBy } from 'lodash';
 
 const barWillEnterHorizontal = ({ style }) => ({
     x: style.x.val,
@@ -45,10 +47,17 @@ const barWillLeaveVertical = springConfig => ({ style }) => ({
     height: spring(0, springConfig),
 })
 
+const prepareSlices = bars => {
+  return map(groupBy(bars, bar => bar.data.indexValue), value => value)
+}
+
 const Bar = ({
     data,
     getIndex,
     keys,
+    keyNames,
+    templates,
+    enableTemplates,
 
     groupMode,
     layout,
@@ -110,6 +119,8 @@ const Bar = ({
         data,
         getIndex,
         keys,
+        keyNames,
+        templates,
         minValue,
         maxValue,
         width,
@@ -120,7 +131,7 @@ const Bar = ({
     }
     const result =
         groupMode === 'grouped' ? generateGroupedBars(options) : generateStackedBars(options)
-
+    console.log(result.bars, result.slices);
     const motionProps = {
         animate,
         motionDamping,
@@ -149,6 +160,14 @@ const Bar = ({
         dataKey: 'data',
         targetKey: 'data.fill',
     })
+    const { y, ticks } = computeAxisTicks({
+        width,
+        height,
+        scale: result.xScale,
+        position: 'bottom',
+    })
+
+    const slices = prepareSlices(result.bars)
 
     return (
         <Container isInteractive={isInteractive} theme={theme}>
@@ -218,43 +237,83 @@ const Bar = ({
                     )
                 }
 
+
+                const renderTicks = (templates) => {
+                    return ticks.map(({x}, index) => {
+                       return (
+                            <div
+                                className="bar-chart__axis"
+                                key={x}
+                                style={{
+                                    transform: `translateX(${x + margin.left}px)`,
+                                    top: `${y + 15}px`
+                                }}
+                            >
+                                <div className="bar-chart__axis-item">
+                                    <div>
+                                        <div>{templates[index]}</div>
+                                    </div>
+                                </div>
+                            </div>
+                       ) ;
+                    });
+                }
+
                 return (
-                    <SvgWrapper
-                        width={outerWidth}
-                        height={outerHeight}
-                        margin={margin}
-                        defs={boundDefs}
-                    >
-                        <Grid
-                            theme={theme}
-                            width={width}
-                            height={height}
-                            xScale={enableGridX ? result.xScale : null}
-                            yScale={enableGridY ? result.yScale : null}
-                            {...motionProps}
-                        />
-                        <Axes
-                            xScale={result.xScale}
-                            yScale={result.yScale}
-                            width={width}
-                            height={height}
-                            theme={theme}
-                            top={axisTop}
-                            right={axisRight}
-                            bottom={axisBottom}
-                            left={axisLeft}
-                            {...motionProps}
-                        />
-                        {bars}
-                        <CartesianMarkers
-                            markers={markers}
-                            width={width}
-                            height={height}
-                            xScale={result.xScale}
-                            yScale={result.yScale}
-                            theme={theme}
-                        />
-                    </SvgWrapper>
+                    <div>
+                        <SvgWrapper
+                            width={outerWidth}
+                            height={outerHeight}
+                            margin={margin}
+                            defs={boundDefs}
+                        >
+                            <Grid
+                                theme={theme}
+                                width={width}
+                                height={height}
+                                xScale={enableGridX ? result.xScale : null}
+                                yScale={enableGridY ? result.yScale : null}
+                                {...motionProps}
+                            />
+                            <Axes
+                                xScale={result.xScale}
+                                yScale={result.yScale}
+                                width={width}
+                                enableTemplates={enableTemplates}
+                                height={height}
+                                theme={theme}
+                                top={axisTop}
+                                right={axisRight}
+                                bottom={axisBottom}
+                                left={axisLeft}
+                                {...motionProps}
+                            />
+                            {bars}
+                            {
+                                layout === 'vertical'
+                                  ?
+                                      <BarSlices
+                                        theme={theme}
+                                        slices={result.slices}
+                                        showTooltip={showTooltip}
+                                        hideTooltip={hideTooltip}
+                                        width={result.slices[0].width}
+                                        height={height}
+                                        tooltipFormat={tooltipFormat}
+                                      />
+                                  : ''
+                            }
+                            <CartesianMarkers
+                                markers={markers}
+                                width={width}
+                                height={height}
+                                xScale={result.xScale}
+                                yScale={result.yScale}
+                                theme={theme}
+                            />
+                        </SvgWrapper>
+                        {enableTemplates ? renderTicks(templates) : ''}
+                    </div>
                 )
             }}
         </Container>
