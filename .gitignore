@@ -5,13 +5,7 @@ node_modules
 /coverage
 /storybook-static
 
-package-lock.json
-yarn.lock
-
 build
-
-/packages/*/lib
-/packages/*/es
 
 *.lerna_backup
 

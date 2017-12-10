@@ -1,12 +1,12 @@
 {
-  "name": "@nivo/line",
+  "name": "@nivo-td/line",
   "version": "0.32.0",
   "license": "MIT",
   "main": "./lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "dependencies": {
-    "@nivo/core": "0.32.0",
+    "@nivo-td/core": "https://github.com/kaadash/nivo-local.git/packages/nivo-core",
     "d3-format": "^1.2.0",
     "d3-scale": "^1.0.6",
     "d3-shape": "^1.2.0",

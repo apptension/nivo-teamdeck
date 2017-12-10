@@ -1,5 +1,5 @@
 {
-  "name": "@nivo/core",
+  "name": "@nivo-td/core",
   "version": "0.32.0",
   "license": "MIT",
   "main": "./lib/index.js",
