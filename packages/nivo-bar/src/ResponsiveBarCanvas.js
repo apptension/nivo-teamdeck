@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 import React from 'react'
-import { ResponsiveWrapper } from '@nivo-td/packages/nivo-core'
+import { ResponsiveWrapper } from '@nivo-td/packages/nivo-core/lib/index'
 import BarCanvas from './BarCanvas'
 
 export default props => (

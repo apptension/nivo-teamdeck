@@ -18,7 +18,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactMotion = require('react-motion');
 
-var _nivoCore = require('@nivo-td/packages/nivo-core');
+var _index = require('@nivo-td/packages/nivo-core/lib/index');
 
 var _compute = require('./compute');
 
@@ -180,12 +180,12 @@ var Bar = function Bar(_ref5) {
         return true;
     };
 
-    var boundDefs = (0, _nivoCore.bindDefs)(defs, result.bars, fill, {
+    var boundDefs = (0, _index.bindDefs)(defs, result.bars, fill, {
         dataKey: 'data',
         targetKey: 'data.fill'
     });
 
-    var _computeAxisTicks = (0, _nivoCore.computeAxisTicks)({
+    var _computeAxisTicks = (0, _index.computeAxisTicks)({
         width: width,
         height: height,
         scale: result.xScale,
@@ -197,7 +197,7 @@ var Bar = function Bar(_ref5) {
     var slices = prepareSlices(result.bars);
 
     return _react2.default.createElement(
-        _nivoCore.Container,
+        _index.Container,
         { isInteractive: isInteractive, theme: theme },
         function (_ref7) {
             var showTooltip = _ref7.showTooltip,
@@ -309,21 +309,21 @@ var Bar = function Bar(_ref5) {
                 'div',
                 null,
                 _react2.default.createElement(
-                    _nivoCore.SvgWrapper,
+                    _index.SvgWrapper,
                     {
                         width: outerWidth,
                         height: outerHeight,
                         margin: margin,
                         defs: boundDefs
                     },
-                    _react2.default.createElement(_nivoCore.Grid, _extends({
+                    _react2.default.createElement(_index.Grid, _extends({
                         theme: theme,
                         width: width,
                         height: height,
                         xScale: enableGridX ? result.xScale : null,
                         yScale: enableGridY ? result.yScale : null
                     }, motionProps)),
-                    _react2.default.createElement(_nivoCore.Axes, _extends({
+                    _react2.default.createElement(_index.Axes, _extends({
                         xScale: result.xScale,
                         yScale: result.yScale,
                         width: width,
@@ -345,7 +345,7 @@ var Bar = function Bar(_ref5) {
                         height: height,
                         tooltipFormat: tooltipFormat
                     }) : '',
-                    _react2.default.createElement(_nivoCore.CartesianMarkers, {
+                    _react2.default.createElement(_index.CartesianMarkers, {
                         markers: markers,
                         width: width,
                         height: height,

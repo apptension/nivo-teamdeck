@@ -17,7 +17,7 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _nivoCore = require('@nivo-td/packages/nivo-core');
+var _index = require('@nivo-td/packages/nivo-core/lib/index');
 
 var _BarItem = require('./BarItem');
 
@@ -66,7 +66,7 @@ var BarPropTypes = exports.BarPropTypes = _extends({
 
     // styling
     borderRadius: _propTypes2.default.number.isRequired,
-    getColor: _propTypes2.default.func.isRequired }, _nivoCore.defsPropTypes, {
+    getColor: _propTypes2.default.func.isRequired }, _index.defsPropTypes, {
     borderWidth: _propTypes2.default.number.isRequired,
     borderColor: _propTypes2.default.any.isRequired,
     getBorderColor: _propTypes2.default.func.isRequired,
@@ -119,7 +119,7 @@ var BarDefaultProps = exports.BarDefaultProps = {
 
     // interactivity
     isInteractive: true,
-    onClick: _nivoCore.noop,
+    onClick: _index.noop,
 
     // canvas specific
     pixelRatio: global.window && global.window.devicePixelRatio ? global.window.devicePixelRatio : 1

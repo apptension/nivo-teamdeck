@@ -8,7 +8,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _compute = require('./compute');
 
-var _nivoCore = require('@nivo-td/packages/nivo-core');
+var _index = require('@nivo-td/packages/nivo-core/lib/index');
 
 var _props2 = require('./props');
 
@@ -34,7 +34,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var findNodeUnderCursor = function findNodeUnderCursor(nodes, margin, x, y) {
     return nodes.find(function (node) {
-        return (0, _nivoCore.isCursorInRect)(node.x + margin.left, node.y + margin.top, node.width, node.height, x, y);
+        return (0, _index.isCursorInRect)(node.x + margin.left, node.y + margin.top, node.width, node.height, x, y);
     });
 };
 
@@ -58,14 +58,14 @@ var BarCanvas = function (_Component) {
                     margin = _this$props.margin,
                     theme = _this$props.theme;
 
-                var _getRelativeCursor = (0, _nivoCore.getRelativeCursor)(_this.surface, event),
+                var _getRelativeCursor = (0, _index.getRelativeCursor)(_this.surface, event),
                     x = _getRelativeCursor[0],
                     y = _getRelativeCursor[1];
 
                 var bar = findNodeUnderCursor(_this.bars, margin, x, y);
 
                 if (bar !== undefined) {
-                    showTooltip(_react2.default.createElement(_nivoCore.BasicTooltip, {
+                    showTooltip(_react2.default.createElement(_index.BasicTooltip, {
                         id: bar.data.id + ' - ' + bar.data.indexValue,
                         value: bar.data.value,
                         enableChip: true,
@@ -87,7 +87,7 @@ var BarCanvas = function (_Component) {
                 margin = _this$props2.margin,
                 onClick = _this$props2.onClick;
 
-            var _getRelativeCursor2 = (0, _nivoCore.getRelativeCursor)(_this.surface, event),
+            var _getRelativeCursor2 = (0, _index.getRelativeCursor)(_this.surface, event),
                 x = _getRelativeCursor2[0],
                 y = _getRelativeCursor2[1];
 
@@ -168,7 +168,7 @@ var BarCanvas = function (_Component) {
         this.ctx.clearRect(0, 0, outerWidth, outerHeight);
         this.ctx.translate(margin.left, margin.top);
 
-        (0, _nivoCore.renderAxesToCanvas)(this.ctx, {
+        (0, _index.renderAxesToCanvas)(this.ctx, {
             xScale: result.xScale,
             yScale: result.yScale,
             width: width,
@@ -203,7 +203,7 @@ var BarCanvas = function (_Component) {
 
 
         return _react2.default.createElement(
-            _nivoCore.Container,
+            _index.Container,
             { isInteractive: isInteractive, theme: theme },
             function (_ref2) {
                 var showTooltip = _ref2.showTooltip,

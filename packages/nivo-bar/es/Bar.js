@@ -10,15 +10,15 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
  */
 import React from 'react';
 import { TransitionMotion, spring } from 'react-motion';
-import { bindDefs } from '@nivo-td/packages/nivo-core';
+import { bindDefs } from '@nivo-td/packages/nivo-core/lib/index';
 import { generateGroupedBars, generateStackedBars } from './compute';
 import setDisplayName from 'recompose/setDisplayName';
 import enhance from './enhance';
 import { BarPropTypes } from './props';
 import BarSlices from './BarSlices';
-import { Container, SvgWrapper } from '@nivo-td/packages/nivo-core';
-import { Grid, Axes } from '@nivo-td/packages/nivo-core';
-import { CartesianMarkers, computeAxisTicks } from '@nivo-td/packages/nivo-core';
+import { Container, SvgWrapper } from '@nivo-td/packages/nivo-core/lib/index';
+import { Grid, Axes } from '@nivo-td/packages/nivo-core/lib/index';
+import { CartesianMarkers, computeAxisTicks } from '@nivo-td/packages/nivo-core/lib/index';
 import { map, groupBy } from 'lodash-es';
 
 var barWillEnterHorizontal = function barWillEnterHorizontal(_ref) {

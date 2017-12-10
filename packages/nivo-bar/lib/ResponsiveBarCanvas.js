@@ -16,7 +16,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _nivoCore = require('@nivo-td/packages/nivo-core');
+var _index = require('@nivo-td/packages/nivo-core/lib/index');
 
 var _BarCanvas = require('./BarCanvas');
 
@@ -26,7 +26,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function (props) {
     return _react2.default.createElement(
-        _nivoCore.ResponsiveWrapper,
+        _index.ResponsiveWrapper,
         null,
         function (_ref) {
             var width = _ref.width,

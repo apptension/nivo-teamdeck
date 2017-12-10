@@ -30,7 +30,7 @@ var _withPropsOnChange = require('recompose/withPropsOnChange');
 
 var _withPropsOnChange2 = _interopRequireDefault(_withPropsOnChange);
 
-var _nivoCore = require('@nivo-td/packages/nivo-core');
+var _index = require('@nivo-td/packages/nivo-core/lib/index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -85,7 +85,7 @@ var enhance = (0, _compose2.default)((0, _withState2.default)('isHover', 'setIsH
         tooltipFormat = _ref3.tooltipFormat;
 
     return {
-        tooltip: _react2.default.createElement(_nivoCore.TableTooltip, { theme: theme,
+        tooltip: _react2.default.createElement(_index.TableTooltip, { theme: theme,
             template: slice.data.template,
             rows: slice.tooltipData.map(function (_ref4) {
                 var name = _ref4.name,

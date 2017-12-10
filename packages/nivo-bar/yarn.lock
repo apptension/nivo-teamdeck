@@ -11,7 +11,7 @@
 
 "@nivo-td@https://github.com/kaadash/nivo-local.git":
   version "0.31.0"
-  resolved "https://github.com/kaadash/nivo-local.git#736326323215a7c1723984978cedecbd0aa41864"
+  resolved "https://github.com/kaadash/nivo-local.git#4185e44bce44dbc0ff3687f27b4f09858b31a5ee"
   dependencies:
     "@ekino/config" "^0.3.0"
     "@nivo/babel-preset" "^0.32.0-9"
@@ -3049,9 +3049,13 @@ window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
 
-wordwrap@0.0.2, wordwrap@~0.0.2:
+wordwrap@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
+
+wordwrap@~0.0.2:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
 wordwrap@~1.0.0:
   version "1.0.0"

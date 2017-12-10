@@ -22,7 +22,7 @@ var _pure = require('recompose/pure');
 
 var _pure2 = _interopRequireDefault(_pure);
 
-var _nivoCore = require('@nivo-td/packages/nivo-core');
+var _index = require('@nivo-td/packages/nivo-core/lib/index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54,7 +54,7 @@ var BarItem = function BarItem(_ref) {
         theme = _ref.theme;
 
     var handleTooltip = function handleTooltip(e) {
-        return showTooltip(_react2.default.createElement(_nivoCore.BasicTooltip, {
+        return showTooltip(_react2.default.createElement(_index.BasicTooltip, {
             id: data.id + ' - ' + data.indexValue,
             value: data.value,
             enableChip: true,

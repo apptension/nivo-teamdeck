@@ -10,9 +10,9 @@ import compose from 'recompose/compose'
 import defaultProps from 'recompose/defaultProps'
 import withPropsOnChange from 'recompose/withPropsOnChange'
 import pure from 'recompose/pure'
-import { withTheme, withColors, withDimensions, withMotion } from '@nivo-td/packages/nivo-core'
-import { getInheritedColorGenerator } from '@nivo-td/packages/nivo-core'
-import { getAccessorFor, getLabelGenerator } from '@nivo-td/packages/nivo-core'
+import { withTheme, withColors, withDimensions, withMotion } from '@nivo-td/packages/nivo-core/lib/index'
+import { getInheritedColorGenerator } from '@nivo-td/packages/nivo-core/lib/index'
+import { getAccessorFor, getLabelGenerator } from '@nivo-td/packages/nivo-core/lib/index'
 import { BarDefaultProps } from './props'
 
 export default Component =>

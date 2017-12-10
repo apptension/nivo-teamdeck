@@ -8,10 +8,10 @@
  */
 import React, { Component } from 'react'
 import { generateGroupedBars, generateStackedBars } from './compute'
-import { renderAxesToCanvas } from '@nivo-td/packages/nivo-core'
-import { getRelativeCursor, isCursorInRect } from '@nivo-td/packages/nivo-core'
-import { Container } from '@nivo-td/packages/nivo-core'
-import { BasicTooltip } from '@nivo-td/packages/nivo-core'
+import { renderAxesToCanvas } from '@nivo-td/packages/nivo-core/lib/index'
+import { getRelativeCursor, isCursorInRect } from '@nivo-td/packages/nivo-core/lib/index'
+import { Container } from '@nivo-td/packages/nivo-core/lib/index'
+import { BasicTooltip } from '@nivo-td/packages/nivo-core/lib/index'
 import { BarPropTypes } from './props'
 import enhance from './enhance'
 

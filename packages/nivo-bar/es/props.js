@@ -9,8 +9,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
  * file that was distributed with this source code.
  */
 import PropTypes from 'prop-types';
-import { noop } from '@nivo-td/packages/nivo-core';
-import { defsPropTypes } from '@nivo-td/packages/nivo-core';
+import { noop } from '@nivo-td/packages/nivo-core/lib/index';
+import { defsPropTypes } from '@nivo-td/packages/nivo-core/lib/index';
 import BarItem from './BarItem';
 
 export var BarPropTypes = _extends({
