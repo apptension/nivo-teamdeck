@@ -1,3 +1,5 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 /*
  * This file is part of the nivo project.
  *
@@ -6,12 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-import PropTypes from 'prop-types'
-import { noop } from '@nivo-td/packages/nivo-core'
-import { defsPropTypes } from '@nivo-td/packages/nivo-core'
-import BarItem from './BarItem'
+import PropTypes from 'prop-types';
+import { noop } from '@nivo-td/packages/nivo-core';
+import { defsPropTypes } from '@nivo-td/packages/nivo-core';
+import BarItem from './BarItem';
 
-export const BarPropTypes = {
+export var BarPropTypes = _extends({
     // data
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     indexBy: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
@@ -52,8 +54,7 @@ export const BarPropTypes = {
 
     // styling
     borderRadius: PropTypes.number.isRequired,
-    getColor: PropTypes.func.isRequired, // computed
-    ...defsPropTypes,
+    getColor: PropTypes.func.isRequired }, defsPropTypes, {
     borderWidth: PropTypes.number.isRequired,
     borderColor: PropTypes.any.isRequired,
     getBorderColor: PropTypes.func.isRequired,
@@ -64,10 +65,10 @@ export const BarPropTypes = {
     tooltipFormat: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 
     // canvas specific
-    pixelRatio: PropTypes.number.isRequired,
-}
+    pixelRatio: PropTypes.number.isRequired
+});
 
-export const BarDefaultProps = {
+export var BarDefaultProps = {
     indexBy: 'id',
     keys: ['value'],
 
@@ -109,6 +110,5 @@ export const BarDefaultProps = {
     onClick: noop,
 
     // canvas specific
-    pixelRatio:
-        global.window && global.window.devicePixelRatio ? global.window.devicePixelRatio : 1,
-}
+    pixelRatio: global.window && global.window.devicePixelRatio ? global.window.devicePixelRatio : 1
+};
