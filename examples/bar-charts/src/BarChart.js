@@ -14,6 +14,10 @@ const keyNames = dataKeys.reduce((keyNameAcc, name) => {
   return keyNameAcc;
 }, {});
 
+const templates = data.map(({country}) => {
+  return `<div style="border-radius: 50%; height: 20px; width: 20px; border: 1px solid; line-height: 20px;">${country}</div>`;
+})
+
 const Bar = () => (
   <div style={{marginTop: '80px', marginLeft: '50px', height: '400px', minWidth: '600px'}}>
     <ResponsiveBar
@@ -32,6 +36,7 @@ const Bar = () => (
       keyNames={keyNames}
       colors={colors}
       enableTemplates={true}
+      templates={templates}
       groupMode={'grouped'}
       enableLabel={false}
       tooltipFormat={(value) => value}
