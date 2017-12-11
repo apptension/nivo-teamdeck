@@ -8,15 +8,15 @@
  */
 import React from 'react'
 import { TransitionMotion, spring } from 'react-motion'
-import { bindDefs } from '@nivo-td/packages/nivo-core/lib/index'
+import { bindDefs } from '@nivo/core'
 import { generateGroupedBars, generateStackedBars } from './compute'
 import setDisplayName from 'recompose/setDisplayName'
 import enhance from './enhance'
 import { BarPropTypes } from './props'
 import BarSlices from './BarSlices'
-import { Container, SvgWrapper } from '@nivo-td/packages/nivo-core/lib/index'
-import { Grid, Axes } from '@nivo-td/packages/nivo-core/lib/index'
-import { CartesianMarkers, computeAxisTicks } from '@nivo-td/packages/nivo-core/lib/index'
+import { Container, SvgWrapper } from '@nivo/core'
+import { Grid, Axes } from '@nivo/core'
+import { CartesianMarkers, computeAxisTicks } from '@nivo/core'
 import { map, groupBy } from 'lodash';
 
 const barWillEnterHorizontal = ({ style }) => ({

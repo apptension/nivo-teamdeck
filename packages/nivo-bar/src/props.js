@@ -7,8 +7,8 @@
  * file that was distributed with this source code.
  */
 import PropTypes from 'prop-types'
-import { noop } from '@nivo-td/packages/nivo-core/lib/index'
-import { defsPropTypes } from '@nivo-td/packages/nivo-core/lib/index'
+import { noop } from '@nivo/core'
+import { defsPropTypes } from '@nivo/core'
 import BarItem from './BarItem'
 
 export const BarPropTypes = {

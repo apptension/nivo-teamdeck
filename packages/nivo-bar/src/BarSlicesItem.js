@@ -5,7 +5,7 @@ import pure from 'recompose/pure'
 import withState from 'recompose/withState'
 import withHandlers from 'recompose/withHandlers'
 import withPropsOnChange from 'recompose/withPropsOnChange'
-import { TableTooltip } from '@nivo-td/packages/nivo-core/lib/index'
+import { TableTooltip } from '@nivo/core'
 
 const hoverColor = '#e8e9e8'
 

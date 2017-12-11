@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveBar } from '@nivo-td/packages/nivo-bar/lib/index';
+import { ResponsiveBar } from '@nivo/bar';
 import { generateCountriesData } from 'nivo-generators'
 import { keys } from 'lodash';
 
