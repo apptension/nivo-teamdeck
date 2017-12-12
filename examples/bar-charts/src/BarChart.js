@@ -1,10 +1,13 @@
 import React from 'react'
-import { ResponsiveBar } from '@nivo/bar';
+import { ResponsiveBarCanvas } from '@nivo/bar';
 import { generateCountriesData } from 'nivo-generators'
 import { keys } from 'lodash';
 
 const colors = ['#fae04d', '#ff744c', '#789792', '#b1646a', '#efa9a1', '#8470c7', '#97a66f'];
 const data = generateCountriesData(['rock', 'jazz', 'hip-hop', 'reggae', 'folk'], { size: 9 });
+console.log(data);
+data[0].jazz = -77;
+data[1].jazz = -37;
 const dataKeys = keys(data[0]);
 const keyNames = dataKeys.reduce((keyNameAcc, name) => {
   keyNameAcc[name] = {
@@ -20,11 +23,11 @@ const templates = data.map(({country}) => {
 
 const Bar = () => (
   <div style={{marginTop: '80px', marginLeft: '50px', height: '400px', minWidth: '600px'}}>
-    <ResponsiveBar
+    <ResponsiveBarCanvas
       margin={{
-        top: 1.5,
+        top: 10,
         right: 0,
-        bottom: 2,
+        bottom: 10,
         left: 40,
       }}
       padding={0.2}
@@ -42,6 +45,10 @@ const Bar = () => (
       tooltipFormat={(value) => value}
       isInteractive={true}
       animate={false}
+      edge={{
+        value: 120,
+        color: '#ff2e0e'
+      }}
     />
   </div>
 )
