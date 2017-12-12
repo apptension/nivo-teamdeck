@@ -107,7 +107,6 @@ class BarCanvas extends Component {
             keyNames,
             templates,
         }
-        debugger;
 
         const result =
             groupMode === 'grouped' ? generateGroupedBars(options) : generateStackedBars(options)
@@ -133,7 +132,6 @@ class BarCanvas extends Component {
             scale: result.xScale,
             position: 'bottom',
           })
-        console.log(ticks, y);
 
         result.bars.forEach(({ x, y, color, width, height }) => {
             this.ctx.fillStyle = color
@@ -223,7 +221,6 @@ class BarCanvas extends Component {
         scale: result.xScale,
         position: 'bottom',
       })
-        console.log('renderTicks', ticks);
       const ticksTemplate = (ticks || []).map(({x}, index) => {
         return (
           <div

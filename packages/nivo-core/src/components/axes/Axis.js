@@ -82,7 +82,6 @@ const Axis = ({
     // interactivity
     onClick,
 }) => {
-    console.log('edge', edge);
     const { x, y, ticks, textAlign, textBaseline } = computeAxisTicks({
         width,
         height,
@@ -102,7 +101,6 @@ const Axis = ({
         tickValues: [...scale.ticks(), edge.value]
     })
     const edgeTick = newValues.ticks.filter(({value}) => value === edge.value)[0];
-    console.log('edgeTick', edgeTick);
 
     let legend = null
     if (_legend !== undefined) {
