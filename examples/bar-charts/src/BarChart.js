@@ -42,6 +42,7 @@ class Bar extends React.Component {
           colors={colors}
           templates={templates}
           groupMode={'grouped'}
+          enableTemplates={true}
           enableLabel={false}
           tooltipFormat={(value) => value}
           isInteractive={true}
