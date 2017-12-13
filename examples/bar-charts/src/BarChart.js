@@ -18,6 +18,9 @@ const templates = data.map(({country}) => {
   return `<div style="border-radius: 50%; height: 20px; width: 20px; border: 1px solid; line-height: 20px;">${country}</div>`;
 })
 
+data[2].jazz = -33;
+data[7].jazz = -77;
+
 class Bar extends React.Component {
   render() {
     return (
