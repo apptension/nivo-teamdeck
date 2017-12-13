@@ -19,6 +19,8 @@ const templates = data.map(({country}) => {
 })
 
 data[2].jazz = -33;
+data[0].rock = 0;
+data[2].rock = 0;
 data[7].jazz = -77;
 
 class Bar extends React.Component {
@@ -44,7 +46,7 @@ class Bar extends React.Component {
           groupMode={'grouped'}
           enableTemplates={true}
           enableLabel={false}
-          tooltipFormat={(value) => value}
+          tooltipFormat={(value) => `${value}pln`}
           isInteractive={true}
           animate={false}
         />
