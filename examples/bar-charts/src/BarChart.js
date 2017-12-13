@@ -47,6 +47,7 @@ class Bar extends React.Component {
           enableTemplates={true}
           enableLabel={false}
           tooltipFormat={(value) => `${value}pln`}
+          axisFormat={2}
           isInteractive={true}
           animate={false}
         />
