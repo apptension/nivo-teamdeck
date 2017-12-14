@@ -35,6 +35,7 @@ class Bar extends React.Component {
             left: 40,
           }}
           padding={0.2}
+          layout={'vertical'}
           data={data}
           indexBy="country"
           enableGridX={false}
@@ -43,7 +44,7 @@ class Bar extends React.Component {
           keyNames={keyNames}
           colors={colors}
           templates={templates}
-          groupMode={'grouped'}
+          groupMode={'stacked'}
           enableTemplates={true}
           enableLabel={false}
           tooltipFormat={(value) => `${value}pln`}
