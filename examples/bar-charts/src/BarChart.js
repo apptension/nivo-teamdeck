@@ -18,32 +18,44 @@ const templates = data.map(({country}) => {
   return `<div style="border-radius: 50%; height: 20px; width: 20px; border: 1px solid; line-height: 20px;">${country}</div>`;
 })
 
-const Bar = () => (
-  <div style={{marginTop: '80px', marginLeft: '50px', height: '400px', minWidth: '600px'}}>
-    <ResponsiveBar
-      margin={{
-        top: 1.5,
-        right: 0,
-        bottom: 2,
-        left: 40,
-      }}
-      padding={0.2}
-      data={data}
-      indexBy="country"
-      enableGridX={false}
-      enableGridY={false}
-      keys={['rock', 'jazz', 'hip-hop', 'reggae', 'folk']}
-      keyNames={keyNames}
-      colors={colors}
-      enableTemplates={true}
-      templates={templates}
-      groupMode={'grouped'}
-      enableLabel={false}
-      tooltipFormat={(value) => value}
-      isInteractive={true}
-      animate={false}
-    />
-  </div>
-)
+data[2].jazz = -33;
+data[0].rock = 0;
+data[2].rock = 0;
+data[7].jazz = -77;
+
+class Bar extends React.Component {
+  render() {
+    return (
+      <div style={{marginTop: '80px', marginLeft: '50px', height: '400px', minWidth: '600px'}}>
+        <ResponsiveBar
+          margin={{
+            top: 1.5,
+            right: 0,
+            bottom: 2,
+            left: 40,
+          }}
+          padding={0.2}
+          layout={'vertical'}
+          data={data}
+          indexBy="country"
+          enableGridX={false}
+          enableGridY={false}
+          keys={['rock', 'jazz', 'hip-hop', 'reggae', 'folk']}
+          keyNames={keyNames}
+          colors={colors}
+          templates={templates}
+          groupMode={'stacked'}
+          enableTemplates={true}
+          enableLabel={false}
+          tooltipFormat={(value) => `${value}pln`}
+          axisFormat={2}
+          isInteractive={true}
+          animate={false}
+        />
+      </div>
+    )
+  }
+}
+
 
 export default Bar
