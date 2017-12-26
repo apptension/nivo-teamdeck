@@ -118,6 +118,7 @@ var enhance = (0, _compose2.default)((0, _withState2.default)('isHover', 'setIsH
 
     return {
         tooltip: hasValues ? _react2.default.createElement(_core.TableTooltip, {
+            template: slice.id,
             theme: theme,
             rows: slice.points.filter(function (p) {
                 return p.value !== null;
