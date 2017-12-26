@@ -12,6 +12,15 @@ build
 
 /packages/*/lib
 /packages/*/es
-
 *.lerna_backup
+
+#excluded
+!/packages/nivo-bar/es
+!/packages/nivo-bar/lib
+
+!/packages/nivo-core/es
+!/packages/nivo-core/lib
+
+!/packages/nivo-line/es
+!/packages/nivo-line/lib
 
