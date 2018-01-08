@@ -81,7 +81,7 @@ const enhance = compose(
         return {
             tooltip: hasValues ? (
                 <TableTooltip
-                    template={slice.id}
+                    title={slice.id}
                     theme={theme}
                     rows={slice.points
                         .filter(p => p.value !== null)

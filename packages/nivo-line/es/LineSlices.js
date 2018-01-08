@@ -17,11 +17,12 @@ var LineSlices = function LineSlices(_ref) {
         showTooltip = _ref.showTooltip,
         hideTooltip = _ref.hideTooltip,
         theme = _ref.theme,
-        tooltipFormat = _ref.tooltipFormat;
+        tooltipFormat = _ref.tooltipFormat,
+        titles = _ref.titles;
     return React.createElement(
         'g',
         null,
-        slices.map(function (slice) {
+        slices.map(function (slice, index) {
             return React.createElement(LineSlicesItem, {
                 key: slice.id,
                 slice: slice,

@@ -89,7 +89,7 @@ var enhance = compose(withState('isHover', 'setIsHover', false), withPropsOnChan
 
     return {
         tooltip: hasValues ? React.createElement(TableTooltip, {
-            template: slice.id,
+            title: slice.id,
             theme: theme,
             rows: slice.points.filter(function (p) {
                 return p.value !== null;
