@@ -11,7 +11,8 @@ import PropTypes from 'prop-types'
 import pure from 'recompose/pure'
 import BarSlicesItem from './BarSlicesItem'
 
-const BarSlices = ({ slices, height, width, theme, tooltipFormat, showTooltip, hideTooltip, paddingInPixel = 0 }) => (
+const BarSlices = ({ slices, height, width, theme, tooltipFormat, showTooltip,
+                     hideTooltip, paddingInPixel = 0, titles }) => (
     <g>
         {slices.map((slice, index) => (
             <g key={slice.x}>
@@ -28,6 +29,7 @@ const BarSlices = ({ slices, height, width, theme, tooltipFormat, showTooltip, h
                 />
                 <BarSlicesItem
                     slice={slice}
+                    title={titles[index]}
                     theme={theme}
                     showTooltip={showTooltip}
                     hideTooltip={hideTooltip}
@@ -48,6 +50,7 @@ BarSlices.propTypes = {
             width: PropTypes.number,
         })
     ).isRequired,
+    titles: PropTypes.array.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
 }

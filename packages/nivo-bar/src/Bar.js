@@ -52,6 +52,7 @@ const Bar = ({
     keys,
     keyNames,
     templates,
+    titles,
     enableTemplates,
     axisFormat,
     //events
@@ -292,6 +293,7 @@ const Bar = ({
                                   <BarSlices
                                     paddingInPixel={result.paddingInPixel}
                                     theme={theme}
+                                    titles={titles}
                                     slices={result.slices}
                                     showTooltip={showTooltip}
                                     hideTooltip={hideTooltip}

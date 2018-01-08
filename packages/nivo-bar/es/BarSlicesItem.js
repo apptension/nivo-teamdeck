@@ -55,10 +55,12 @@ var Chip = function Chip(_ref2) {
 var enhance = compose(withState('isHover', 'setIsHover', false), withPropsOnChange(['slice', 'theme', 'tooltipFormat'], function (_ref3) {
     var slice = _ref3.slice,
         theme = _ref3.theme,
-        tooltipFormat = _ref3.tooltipFormat;
+        tooltipFormat = _ref3.tooltipFormat,
+        title = _ref3.title;
 
     return {
         tooltip: React.createElement(TableTooltip, { theme: theme,
+            title: title,
             template: slice.data.template,
             rows: slice.tooltipData.map(function (_ref4) {
                 var name = _ref4.name,

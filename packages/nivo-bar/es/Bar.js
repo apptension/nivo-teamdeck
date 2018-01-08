@@ -70,6 +70,7 @@ var Bar = function Bar(_ref5) {
         keys = _ref5.keys,
         keyNames = _ref5.keyNames,
         templates = _ref5.templates,
+        titles = _ref5.titles,
         enableTemplates = _ref5.enableTemplates,
         axisFormat = _ref5.axisFormat,
         groupMode = _ref5.groupMode,
@@ -305,6 +306,7 @@ var Bar = function Bar(_ref5) {
                     layout === 'vertical' ? React.createElement(BarSlices, {
                         paddingInPixel: result.paddingInPixel,
                         theme: theme,
+                        titles: titles,
                         slices: result.slices,
                         showTooltip: showTooltip,
                         hideTooltip: hideTooltip,

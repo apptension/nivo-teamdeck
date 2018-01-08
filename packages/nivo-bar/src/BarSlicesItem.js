@@ -47,9 +47,10 @@ const Chip = ({ color }) => (
 
 const enhance = compose(
     withState('isHover', 'setIsHover', false),
-    withPropsOnChange(['slice', 'theme', 'tooltipFormat'], ({ slice, theme, tooltipFormat }) => {
+    withPropsOnChange(['slice', 'theme', 'tooltipFormat'], ({ slice, theme, tooltipFormat, title }) => {
         return {
             tooltip: <TableTooltip theme={theme}
+                                   title={title}
                                    template={slice.data.template}
                                    rows={
               slice.tooltipData.map(({ name, value, format, color }) => {

@@ -20,12 +20,15 @@ const TableTooltip = ({ title, rows, theme, template }) => {
 
     return (
         <div style={theme.tooltip.container}>
-            {title && title}
-            {
+            <div className="table-tooltip__title-section">
+              {
                 template
                   ? <div dangerouslySetInnerHTML={{__html: template}} />
                   : ''
-            }
+              }
+              <div className="table-tooltip__title">{title && title}</div>
+            </div>
+
             <table style={{ ...tableStyle, ...theme.tooltip.table }}>
                 <tbody>
                     {rows.map((row, i) => (
