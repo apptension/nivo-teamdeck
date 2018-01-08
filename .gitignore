@@ -24,3 +24,6 @@ build
 !/packages/nivo-line/es
 !/packages/nivo-line/lib
 
+!/packages/nivo-pie/es
+!/packages/nivo-pie/lib
+

@@ -43,3 +43,13 @@ img {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.table-tooltip__title-section {
+  display: flex;
+}
+
+.table-tooltip__title {
+  font-weight: 500;
+  color: rgba(0, 0, 0, .7);
+  font-size: 12px;
+}
