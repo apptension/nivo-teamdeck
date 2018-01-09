@@ -45,7 +45,7 @@ class Bar extends React.Component {
           keyNames={keyNames}
           colors={colors}
           templates={templates}
-          groupMode={'stacked'}
+          groupMode={'grouped'}
           enableTemplates={true}
           enableLabel={false}
           tooltipFormat={(value) => `${value}pln`}

@@ -175,14 +175,13 @@ const Bar = ({
                           top: `${y + 15}px`
                       }}
                 >
-                    <div className="bar-chart__axis-item">
-                              <div dangerouslySetInnerHTML={{__html: templates[index]}} />
-                          </div>
+                    <div className="bar-chart__axis-item" style={{maxWidth: result.slices[0].width}}>
+                        <div dangerouslySetInnerHTML={{__html: templates[index]}} />
+                    </div>
                 </div>
            ) ;
         });
     }
-    console.log(axisFormat);
 
     return (
       <div>

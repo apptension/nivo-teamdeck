@@ -184,13 +184,12 @@ var Bar = function Bar(_ref5) {
                 },
                 React.createElement(
                     'div',
-                    { className: 'bar-chart__axis-item' },
+                    { className: 'bar-chart__axis-item', style: { maxWidth: result.slices[0].width } },
                     React.createElement('div', { dangerouslySetInnerHTML: { __html: templates[index] } })
                 )
             );
         });
     };
-    console.log(axisFormat);
 
     return React.createElement(
         'div',
