@@ -27,27 +27,39 @@ var BasicTooltip = function BasicTooltip(props) {
         enableChip = props.enableChip,
         color = props.color,
         theme = props.theme,
-        data = props.data;
+        formatValue = props.formatValue,
+        keyName = props.keyName,
+        enableInjectingHTML = props.enableInjectingHTML,
+        template = props.template;
 
 
     var value = _value;
     if (format !== undefined && value !== undefined) {
-        value = format(value, data.keyName.format);
+        value = format(value, formatValue);
     }
 
     return React.createElement(
         'div',
-        { style: theme.tooltip.container },
+        { className: 'nivo__basic-tooltip', style: theme.tooltip.container },
         React.createElement(
             'div',
             { style: theme.tooltip.basic },
             enableChip && React.createElement(Chip, { size: 6, color: color, style: chipStyle }),
+            enableInjectingHTML && React.createElement('div', { dangerouslySetInnerHTML: { __html: template } }),
             value !== undefined ? React.createElement(
-                'span',
-                null,
-                data.keyName.name,
-                ': ',
-                value
+                'div',
+                { className: 'nivo__basic-tooltip-values' },
+                React.createElement(
+                    'span',
+                    null,
+                    keyName
+                ),
+                React.createElement(
+                    'span',
+                    null,
+                    ': ',
+                    value
+                )
             ) : id
         )
     );

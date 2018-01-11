@@ -53,3 +53,8 @@ img {
   color: rgba(0, 0, 0, .7);
   font-size: 12px;
 }
+
+.nivo__basic-tooltip-values span:first-child {
+  color: blue;
+  background: red;
+}

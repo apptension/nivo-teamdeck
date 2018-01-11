@@ -158,10 +158,13 @@ var Pie = function Pie(_ref) {
                                     return showTooltip(React.createElement(BasicTooltip, {
                                         id: d.data.label,
                                         value: d.data.value,
-                                        enableChip: true,
+                                        enableInjectingHTML: true,
+                                        enableChip: false,
                                         color: d.data.color,
                                         theme: theme,
-                                        format: tooltipFormat
+                                        format: tooltipFormat,
+                                        template: d.data.template,
+                                        keyName: d.data.name
                                     }), e);
                                 };
 

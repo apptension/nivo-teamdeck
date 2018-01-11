@@ -5,14 +5,6 @@ import { keys } from 'lodash';
 
 const colors = ['#fae04d', '#ff744c', '#789792', '#b1646a', '#efa9a1', '#8470c7', '#97a66f'];
 const data = generateDrinkStats();
-const dataKeys = keys(data[0]);
-const keyNames = dataKeys.reduce((keyNameAcc, name) => {
-  keyNameAcc[name] = {
-    name,
-    format: 1,
-  };
-  return keyNameAcc;
-}, {});
 
 class LineChart extends React.Component {
   render() {
@@ -33,7 +25,6 @@ class LineChart extends React.Component {
           enableGridX={false}
           enableGridY={false}
           keys={['rock', 'jazz', 'hip-hop', 'reggae', 'folk']}
-          keyNames={keyNames}
           colors={colors}
           groupMode={'stacked'}
           enableTemplates={true}

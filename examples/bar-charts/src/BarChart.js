@@ -36,7 +36,7 @@ class Bar extends React.Component {
           }}
           padding={0.2}
           titles={data.map(() => 'test')}
-          layout={'vertical'}
+          layout={'horizontal'}
           data={data}
           indexBy="country"
           enableGridX={false}

@@ -45,7 +45,8 @@ const BarItem = ({
                 color={color}
                 theme={theme}
                 format={tooltipFormat}
-                data={data}
+                keyName={data.keyName.name}
+                formatValue={data.keyName.format}
             />,
             e
         )

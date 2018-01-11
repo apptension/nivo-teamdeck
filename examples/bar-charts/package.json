@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@nivo/bar": "^0.33.0-4",
+    "@nivo/pie": "^0.33.0-4",
     "@nivo/line": "^0.33.0",
     "lodash": "^4.17.4",
     "nivo": "^0.31.0",
