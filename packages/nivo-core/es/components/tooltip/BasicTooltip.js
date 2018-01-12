@@ -38,7 +38,6 @@ var BasicTooltip = function BasicTooltip(props) {
     if (format !== undefined && value !== undefined) {
         value = format(value, formatValue);
     }
-    console.log(formattedValue);
 
     return React.createElement(
         'div',

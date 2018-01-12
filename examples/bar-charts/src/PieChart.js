@@ -4,6 +4,14 @@ import { generateProgrammingLanguageStats } from 'nivo-generators'
 
 export default class PieChart extends React.Component {
   render() {
+    const onMouseEnter = (e, dataHovered) => {
+      console.log('onMouseEnter', e, dataHovered);
+    };
+
+    const onMouseLeave = (e, dataHovered) => {
+      console.log('onMouseLeave', e, dataHovered);
+    };
+
     return (
       <div style={{height: 200}}>
         <ResponsivePie
@@ -24,6 +32,8 @@ export default class PieChart extends React.Component {
           innerRadius={0.4}
           enableRadialLabels={false}
           slicesLabelsSkipAngle={10}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
           animate={false}
         />
       </div>

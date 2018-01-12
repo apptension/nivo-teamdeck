@@ -39,7 +39,6 @@ const BasicTooltip = props => {
   if (format !== undefined && value !== undefined) {
     value = format(value, formatValue)
   }
-  console.log(formattedValue);
 
     return (
         <div className="nivo__basic-tooltip" style={theme.tooltip.container}>

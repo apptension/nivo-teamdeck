@@ -57,7 +57,9 @@ var Pie = function Pie(_ref) {
         motionStiffness = _ref.motionStiffness,
         motionDamping = _ref.motionDamping,
         isInteractive = _ref.isInteractive,
-        tooltipFormat = _ref.tooltipFormat;
+        tooltipFormat = _ref.tooltipFormat,
+        onMouseLeave = _ref.onMouseLeave,
+        onMouseEnter = _ref.onMouseEnter;
 
     var centerX = width / 2;
     var centerY = height / 2;
@@ -155,7 +157,8 @@ var Pie = function Pie(_ref) {
                             },
                             arcsData.map(function (d) {
                                 var handleTooltip = function handleTooltip(e) {
-                                    return showTooltip(React.createElement(BasicTooltip, {
+                                    onMouseEnter && onMouseEnter(e, d.data);
+                                    showTooltip(React.createElement(BasicTooltip, {
                                         id: d.data.label,
                                         value: d.data.value,
                                         enableInjectingHTML: true,
@@ -169,6 +172,11 @@ var Pie = function Pie(_ref) {
                                     }), e);
                                 };
 
+                                var handleMouseLeave = function handleMouseLeave(e) {
+                                    onMouseLeave && onMouseLeave(e, d.data);
+                                    hideTooltip();
+                                };
+
                                 return React.createElement('path', {
                                     key: d.data.id,
                                     d: interpolatedArc(d),
@@ -177,7 +185,7 @@ var Pie = function Pie(_ref) {
                                     stroke: borderColor(d.data),
                                     onMouseEnter: handleTooltip,
                                     onMouseMove: handleTooltip,
-                                    onMouseLeave: hideTooltip
+                                    onMouseLeave: handleMouseLeave
                                 });
                             }),
                             enableSlicesLabels && React.createElement(PieSlicesLabels, _extends({

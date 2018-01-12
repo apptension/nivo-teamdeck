@@ -71,6 +71,10 @@ const Pie = ({
     // interactivity
     isInteractive,
     tooltipFormat,
+
+    // events
+    onMouseLeave,
+    onMouseEnter,
 }) => {
     const centerX = width / 2
     const centerY = height / 2
@@ -162,22 +166,29 @@ const Pie = ({
                                     })`}
                                 >
                                     {arcsData.map(d => {
-                                        const handleTooltip = e =>
-                                            showTooltip(
-                                                <BasicTooltip
-                                                    id={d.data.label}
-                                                    value={d.data.value}
-                                                    enableInjectingHTML={true}
-                                                    enableChip={false}
-                                                    color={d.data.color}
-                                                    theme={theme}
-                                                    format={tooltipFormat}
-                                                    template={d.data.template}
-                                                    keyName={d.data.name}
-                                                    formattedValue={d.data.formattedValue}
-                                                />,
-                                                e
-                                            )
+                                        const handleTooltip = e => {
+                                          onMouseEnter && onMouseEnter(e, d.data);
+                                          showTooltip(
+                                            <BasicTooltip
+                                              id={d.data.label}
+                                              value={d.data.value}
+                                              enableInjectingHTML={true}
+                                              enableChip={false}
+                                              color={d.data.color}
+                                              theme={theme}
+                                              format={tooltipFormat}
+                                              template={d.data.template}
+                                              keyName={d.data.name}
+                                              formattedValue={d.data.formattedValue}
+                                            />,
+                                            e
+                                          )
+                                        };
+
+                                        const handleMouseLeave = e => {
+                                            onMouseLeave && onMouseLeave(e, d.data);
+                                            hideTooltip();
+                                        };
 
                                         return (
                                             <path
@@ -188,7 +199,7 @@ const Pie = ({
                                                 stroke={borderColor(d.data)}
                                                 onMouseEnter={handleTooltip}
                                                 onMouseMove={handleTooltip}
-                                                onMouseLeave={hideTooltip}
+                                                onMouseLeave={handleMouseLeave}
                                             />
                                         )
                                     })}
