@@ -30,13 +30,15 @@ var BasicTooltip = function BasicTooltip(props) {
         formatValue = props.formatValue,
         keyName = props.keyName,
         enableInjectingHTML = props.enableInjectingHTML,
-        template = props.template;
+        template = props.template,
+        formattedValue = props.formattedValue;
 
 
     var value = _value;
     if (format !== undefined && value !== undefined) {
         value = format(value, formatValue);
     }
+    console.log(formattedValue);
 
     return React.createElement(
         'div',
@@ -58,7 +60,7 @@ var BasicTooltip = function BasicTooltip(props) {
                     'span',
                     null,
                     ': ',
-                    value
+                    formattedValue || value
                 )
             ) : id
         )

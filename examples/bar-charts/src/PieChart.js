@@ -17,6 +17,7 @@ export default class PieChart extends React.Component {
             id: d.label,
             name: 'test',
             format: 0,
+            formattedValue: d.value + 'h',
             template: `<div style="border-radius: 50%; height: 20px; width: 20px; border: 1px solid; line-height: 20px;">ad</div>`,
             ...d,
           }))}

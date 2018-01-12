@@ -88,6 +88,7 @@ var Bar = function Bar(_ref5) {
         keys = _ref5.keys,
         keyNames = _ref5.keyNames,
         templates = _ref5.templates,
+        titles = _ref5.titles,
         enableTemplates = _ref5.enableTemplates,
         axisFormat = _ref5.axisFormat,
         groupMode = _ref5.groupMode,
@@ -201,13 +202,12 @@ var Bar = function Bar(_ref5) {
                 },
                 _react2.default.createElement(
                     'div',
-                    { className: 'bar-chart__axis-item' },
+                    { className: 'bar-chart__axis-item', style: { maxWidth: result.slices[0].width } },
                     _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: templates[index] } })
                 )
             );
         });
     };
-    console.log(axisFormat);
 
     return _react2.default.createElement(
         'div',
@@ -323,6 +323,7 @@ var Bar = function Bar(_ref5) {
                     layout === 'vertical' ? _react2.default.createElement(_BarSlices2.default, {
                         paddingInPixel: result.paddingInPixel,
                         theme: theme,
+                        titles: titles,
                         slices: result.slices,
                         showTooltip: showTooltip,
                         hideTooltip: hideTooltip,

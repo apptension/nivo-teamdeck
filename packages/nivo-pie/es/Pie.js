@@ -164,7 +164,8 @@ var Pie = function Pie(_ref) {
                                         theme: theme,
                                         format: tooltipFormat,
                                         template: d.data.template,
-                                        keyName: d.data.name
+                                        keyName: d.data.name,
+                                        formattedValue: d.data.formattedValue
                                     }), e);
                                 };
 

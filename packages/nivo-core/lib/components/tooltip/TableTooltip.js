@@ -42,8 +42,16 @@ var TableTooltip = function TableTooltip(_ref) {
     return _react2.default.createElement(
         'div',
         { style: theme.tooltip.container },
-        title && title,
-        template ? _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: template } }) : '',
+        _react2.default.createElement(
+            'div',
+            { className: 'table-tooltip__title-section' },
+            template ? _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: template } }) : '',
+            _react2.default.createElement(
+                'div',
+                { className: 'table-tooltip__title' },
+                title && title
+            )
+        ),
         _react2.default.createElement(
             'table',
             { style: _extends({}, tableStyle, theme.tooltip.table) },

@@ -61,7 +61,8 @@ var BarItem = function BarItem(_ref) {
             color: color,
             theme: theme,
             format: tooltipFormat,
-            data: data
+            keyName: data.keyName.name,
+            formatValue: data.keyName.format
         }), e);
     };
 

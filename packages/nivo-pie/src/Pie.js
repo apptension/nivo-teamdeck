@@ -174,6 +174,7 @@ const Pie = ({
                                                     format={tooltipFormat}
                                                     template={d.data.template}
                                                     keyName={d.data.name}
+                                                    formattedValue={d.data.formattedValue}
                                                 />,
                                                 e
                                             )

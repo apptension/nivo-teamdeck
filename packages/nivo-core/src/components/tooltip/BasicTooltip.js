@@ -22,13 +22,24 @@ const chipStyle = {
 
 const BasicTooltip = props => {
     const {
-      id, value: _value, format, enableChip, color, theme, formatValue, keyName, enableInjectingHTML, template
+      id,
+      value: _value,
+      format,
+      enableChip,
+      color,
+      theme,
+      formatValue,
+      keyName,
+      enableInjectingHTML,
+      template,
+      formattedValue
     } = props
 
     let value = _value
   if (format !== undefined && value !== undefined) {
     value = format(value, formatValue)
   }
+  console.log(formattedValue);
 
     return (
         <div className="nivo__basic-tooltip" style={theme.tooltip.container}>
@@ -40,7 +51,7 @@ const BasicTooltip = props => {
                   <span>
                       {keyName}
                   </span>
-                  <span>: {value}</span>
+                  <span>: {formattedValue || value}</span>
                 </div>
               ) : (
                 id
