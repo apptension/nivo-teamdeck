@@ -21,7 +21,8 @@ var BarSlices = function BarSlices(_ref) {
         hideTooltip = _ref.hideTooltip,
         _ref$paddingInPixel = _ref.paddingInPixel,
         paddingInPixel = _ref$paddingInPixel === undefined ? 0 : _ref$paddingInPixel,
-        titles = _ref.titles;
+        titles = _ref.titles,
+        margin = _ref.margin;
     return React.createElement(
         'g',
         null,
@@ -37,18 +38,19 @@ var BarSlices = function BarSlices(_ref) {
                     },
                     x1: slice.x,
                     x2: slice.x,
-                    y1: 0,
-                    y2: height
+                    y1: -margin.top,
+                    y2: height + margin.top
                 }),
                 React.createElement(BarSlicesItem, {
                     slice: slice,
+                    margin: margin,
                     title: titles[index],
                     theme: theme,
                     showTooltip: showTooltip,
                     hideTooltip: hideTooltip,
                     x: slice.x - (index === 0 ? paddingInPixel - 5 : 0),
                     width: width + (index === 0 ? paddingInPixel - 5 : 0),
-                    height: height,
+                    height: height + margin.top,
                     tooltipFormat: tooltipFormat
                 })
             );

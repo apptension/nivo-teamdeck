@@ -36,7 +36,9 @@ export var axisPropType = PropTypes.shape({
     // legend
     legend: PropTypes.string,
     legendPosition: PropTypes.oneOf(legendPositions),
-    legendOffset: PropTypes.number
+    legendOffset: PropTypes.number,
+
+    margin: PropTypes.object
 });
 
 var willEnter = function willEnter() {
@@ -65,6 +67,7 @@ var Axis = function Axis(_ref2) {
         width = _ref2.width,
         height = _ref2.height,
         _position = _ref2.position,
+        margin = _ref2.margin,
         tickValues = _ref2.tickValues,
         tickCount = _ref2.tickCount,
         tickSize = _ref2.tickSize,
@@ -222,7 +225,7 @@ var Axis = function Axis(_ref2) {
         { transform: 'translate(' + x + ',' + y + ')' },
         legend,
         tickElements,
-        _position === 'left' ? React.createElement('line', { x1: '0', x2: '0', y1: '0', y2: height }) : ''
+        _position === 'left' ? React.createElement('line', { x1: '0', x2: '0', y1: margin ? -margin.top : 0, y2: height + (margin ? margin.top : 0) }) : ''
     );
 };
 

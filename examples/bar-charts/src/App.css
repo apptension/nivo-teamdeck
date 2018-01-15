@@ -30,6 +30,10 @@ img {
   padding: 20px;
   color: white;
 }
+.table-tooltip__container {
+  padding: 20px !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .4)!important;
+}
 
 .App-title {
   font-size: 1.5em;

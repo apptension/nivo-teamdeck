@@ -12,7 +12,7 @@ import pure from 'recompose/pure'
 import BarSlicesItem from './BarSlicesItem'
 
 const BarSlices = ({ slices, height, width, theme, tooltipFormat, showTooltip,
-                     hideTooltip, paddingInPixel = 0, titles }) => (
+                     hideTooltip, paddingInPixel = 0, titles, margin }) => (
     <g>
         {slices.map((slice, index) => (
             <g key={slice.x}>
@@ -24,18 +24,19 @@ const BarSlices = ({ slices, height, width, theme, tooltipFormat, showTooltip,
                     }}
                     x1={slice.x}
                     x2={slice.x}
-                    y1={0}
-                    y2={height}
+                    y1={-margin.top}
+                    y2={height + margin.top}
                 />
                 <BarSlicesItem
                     slice={slice}
+                    margin={margin}
                     title={titles[index]}
                     theme={theme}
                     showTooltip={showTooltip}
                     hideTooltip={hideTooltip}
                     x={slice.x - (index === 0 ? paddingInPixel - 5 : 0)}
                     width={width + (index === 0 ? paddingInPixel - 5 : 0)}
-                    height={height}
+                    height={height + margin.top}
                     tooltipFormat={tooltipFormat}
                 />
             </g>

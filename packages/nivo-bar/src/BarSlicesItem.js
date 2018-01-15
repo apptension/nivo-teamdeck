@@ -9,10 +9,11 @@ import { TableTooltip } from '@nivo/core'
 
 const hoverColor = '#e8e9e8'
 
-const BarSlicesItem = ({ slice, x, height, width, showTooltip, hideTooltip, isHover }) => {
+const BarSlicesItem = ({ margin, x, height, width, showTooltip, hideTooltip, isHover }) => {
     return (
         <rect
             x={x}
+            y={margin && -margin.top}
             fill="black"
             fillOpacity={isHover ? 0.05 : 0}
             height={height}

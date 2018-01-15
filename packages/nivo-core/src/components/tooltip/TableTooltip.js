@@ -19,7 +19,7 @@ const TableTooltip = ({ title, rows, theme, template }) => {
     if (!rows.length) return null
 
     return (
-        <div style={theme.tooltip.container}>
+        <div className="table-tooltip__container" style={theme.tooltip.container}>
             <div className="table-tooltip__title-section">
               {
                 template

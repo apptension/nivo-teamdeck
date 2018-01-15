@@ -10,7 +10,7 @@ import { TableTooltip } from '@nivo/core';
 var hoverColor = '#e8e9e8';
 
 var BarSlicesItem = function BarSlicesItem(_ref) {
-    var slice = _ref.slice,
+    var margin = _ref.margin,
         x = _ref.x,
         height = _ref.height,
         width = _ref.width,
@@ -20,6 +20,7 @@ var BarSlicesItem = function BarSlicesItem(_ref) {
 
     return React.createElement('rect', {
         x: x,
+        y: margin && -margin.top,
         fill: 'black',
         fillOpacity: isHover ? 0.05 : 0,
         height: height,

@@ -29,14 +29,14 @@ class Bar extends React.Component {
       <div style={{marginTop: '80px', marginLeft: '50px', height: '400px', minWidth: '600px'}}>
         <ResponsiveBar
           margin={{
-            top: 1.5,
+            top: 50,
             right: 0,
             bottom: 2,
             left: 40,
           }}
           padding={0.2}
           titles={data.map(() => 'test')}
-          layout={'horizontal'}
+          layout={'vertical'}
           data={data}
           indexBy="country"
           enableGridX={false}

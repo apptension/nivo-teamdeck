@@ -25,6 +25,7 @@ var Axes = function Axes(_ref) {
         yScale = _ref.yScale,
         width = _ref.width,
         height = _ref.height,
+        margin = _ref.margin,
         axisFormat = _ref.axisFormat,
         format = _ref.format,
         top = _ref.top,
@@ -56,6 +57,7 @@ var Axes = function Axes(_ref) {
                 key: position,
                 width: width,
                 height: height,
+                margin: margin,
                 position: position,
                 axisFormat: axisFormat,
                 format: format,
@@ -74,6 +76,7 @@ Axes.propTypes = _extends({
     yScale: PropTypes.func.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
+    margin: PropTypes.object,
 
     // axes
     top: axisPropType,

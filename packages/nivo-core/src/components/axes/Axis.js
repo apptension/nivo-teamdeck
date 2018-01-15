@@ -35,6 +35,8 @@ export const axisPropType = PropTypes.shape({
     legend: PropTypes.string,
     legendPosition: PropTypes.oneOf(legendPositions),
     legendOffset: PropTypes.number,
+
+    margin: PropTypes.object,
 })
 
 const willEnter = () => ({
@@ -55,6 +57,7 @@ const Axis = ({
     width,
     height,
     position: _position,
+    margin,
 
     // ticks
     tickValues,
@@ -215,7 +218,8 @@ const Axis = ({
             {legend}
             {tickElements}
             {
-                _position === 'left' ? (<line x1="0" x2="0" y1="0" y2={height} />) : ''
+                _position === 'left' ?
+                  (<line x1="0" x2="0" y1={margin ? -margin.top : 0} y2={height + (margin ? margin.top : 0)} />) : ''
             }
         </g>
     )

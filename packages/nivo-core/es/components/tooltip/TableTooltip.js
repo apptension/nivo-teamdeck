@@ -27,7 +27,7 @@ var TableTooltip = function TableTooltip(_ref) {
 
     return React.createElement(
         'div',
-        { style: theme.tooltip.container },
+        { className: 'table-tooltip__container', style: theme.tooltip.container },
         React.createElement(
             'div',
             { className: 'table-tooltip__title-section' },

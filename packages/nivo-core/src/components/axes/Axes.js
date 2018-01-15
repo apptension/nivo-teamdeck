@@ -24,6 +24,7 @@ const Axes = ({
     yScale,
     width,
     height,
+    margin,
 
     axisFormat,
     format,
@@ -62,6 +63,7 @@ const Axes = ({
                         key={position}
                         width={width}
                         height={height}
+                        margin={margin}
                         position={position}
                         axisFormat={axisFormat}
                         format={format}
@@ -82,6 +84,7 @@ Axes.propTypes = {
     yScale: PropTypes.func.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
+    margin: PropTypes.object,
 
     // axes
     top: axisPropType,
