@@ -39,7 +39,7 @@ var BarSlices = function BarSlices(_ref) {
                     x1: slice.x,
                     x2: slice.x,
                     y1: -margin.top,
-                    y2: height + margin.top
+                    y2: height
                 }),
                 React.createElement(BarSlicesItem, {
                     slice: slice,
