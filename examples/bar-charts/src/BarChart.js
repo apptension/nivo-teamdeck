@@ -48,7 +48,7 @@ class Bar extends React.Component {
           groupMode={'grouped'}
           enableTemplates={true}
           enableLabel={false}
-          tooltipFormat={(value) => `${value}pln`}
+          tooltipFormat={(value) => `${value} &dollar;`}
           axisFormat={2}
           isInteractive={true}
           animate={false}

@@ -39,7 +39,6 @@ const BasicTooltip = props => {
   if (format !== undefined && value !== undefined) {
     value = format(value, formatValue)
   }
-
     return (
         <div className="nivo__basic-tooltip" style={theme.tooltip.container}>
             <div style={theme.tooltip.basic}>
@@ -50,7 +49,9 @@ const BasicTooltip = props => {
                   <span>
                       {keyName}
                   </span>
-                  <span>: {formattedValue || value}</span>
+
+                  <span>: </span>
+                  <span dangerouslySetInnerHTML={{__html: formattedValue || value}} />
                 </div>
               ) : (
                 id

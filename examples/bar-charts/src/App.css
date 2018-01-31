@@ -59,6 +59,10 @@ img {
 }
 
 .nivo__basic-tooltip-values span:first-child {
-  color: blue;
-  background: red;
+  color: #acf7ff;
+  background: #fff5b9;
+}
+
+.table-tooltip__container table tr td:nth-child(3n) {
+  background: #92cb69;
 }
