@@ -52,7 +52,7 @@ var TableTooltip = function TableTooltip(_ref) {
                             return React.createElement(
                                 'td',
                                 { key: j, style: theme.tooltip.tableCell },
-                                React.createElement('div', { dangerouslySetInnerHTML: { __html: column } })
+                                (j + 1) % 3 === 0 ? React.createElement('div', { dangerouslySetInnerHTML: { __html: column } }) : column
                             );
                         })
                     );

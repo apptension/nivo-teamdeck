@@ -33,11 +33,20 @@ const TableTooltip = ({ title, rows, theme, template }) => {
                 <tbody>
                     {rows.map((row, i) => (
                         <tr key={i}>
-                            {row.map((column, j) => (
+                            {row.map((column, j) => {
+                              return (
                                 <td key={j} style={theme.tooltip.tableCell}>
-                                    <div dangerouslySetInnerHTML={{__html: column}} />
+                                  {
+                                    (j + 1) % 3 === 0 ?
+                                    (
+                                      <div dangerouslySetInnerHTML={{__html: column}} />
+                                    )
+                                      :
+                                    column
+                                  }
                                 </td>
-                            ))}
+                              )
+                            })}
                         </tr>
                     ))}
                 </tbody>
